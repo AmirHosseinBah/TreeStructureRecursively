@@ -1,0 +1,39 @@
+﻿@model List<RecursionTree.Models.Node>
+
+@{
+    ViewData["Title"] = "index";
+}
+
+
+<h3 class="alert alert-success text-center">Partial View Tree</h3>
+
+@await Html.PartialAsync("_PartialTree", Model)
+<br />
+<h3 class="alert alert-info text-center">Component View Tree</h3>
+
+@await Component.InvokeAsync("NodeViewComponent1",Model)
+
+
+
+@section Scripts{
+    <script>
+        const toggles = document.querySelectorAll(".toggle");
+        toggles.forEach((toggle) => {
+            toggle.addEventListener("click", () => {
+                const listItem = toggle.closest("li");
+                const childrenList = listItem.querySelector(".children");
+
+                if (childrenList.style.display === "none") {
+                    childrenList.style.display = "block";
+                    toggle.innerText = "-";
+                } else {
+                    childrenList.style.display = "none";
+                    toggle.innerText = "+";
+                }
+            });
+        });
+
+    </script>
+
+
+    }

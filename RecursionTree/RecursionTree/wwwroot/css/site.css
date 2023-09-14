@@ -1,0 +1,79 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/*tree list*/
+#node-list {
+    list-style-type: none;
+    padding-left: 0;
+    list-style:none;
+}
+
+    #node-list > li {
+        padding: 5px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+
+    #node-list > .head {
+        background-color: rgb(195, 206, 237);
+        border-radius: 3px;
+    }
+
+        #node-list > .head > .row > div > span {
+            font-size: 20px;
+            margin-left: 70px;
+            font-weight: bold;
+        }
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.toggle {
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: system-ui;
+    position: relative;
+    bottom: 23px;
+}
+
+.children {
+    display: none;
+    margin-top: 5px;
+    margin-left: 30px;
+    list-style-type: none;
+}
+
+.sub3 {
+    display: none;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.show {
+    display: block;
+}
+

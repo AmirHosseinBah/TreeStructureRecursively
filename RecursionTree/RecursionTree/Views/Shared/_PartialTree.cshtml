@@ -1,0 +1,33 @@
+﻿@model List<RecursionTree.Models.Node>
+
+@foreach (var sub1 in Model)
+{
+
+    <li id="node-list">
+        <div class="row pt-2">
+            @if (sub1.SubNode?.Count > 0)
+            {
+                <div class="col-md-2 position-absolute">
+                    <span class="toggle">+</span>
+                </div>
+            }
+            <div class="col-md-6 ">
+                <span class="name"> @sub1.Name</span>
+            </div>
+
+            <div class="col-md-4">
+                <a  href="#" class="btn btn-sm btn-success  p-2 text-center fa fa-plus"></a>
+                <a href="#" class="btn btn-warning fa fa-edit p-2"> </a>
+                <button class="btn btn-danger fa fa-trash-o" href="#"> </button>
+            </div>
+        </div>
+        <ul class="children">
+            @if (sub1.SubNode != null)
+                @await Html.PartialAsync("_PartialTree", sub1.SubNode)
+        </ul>
+    </li>
+    <hr />
+}
+
+
+
